@@ -1,0 +1,23 @@
+---
+const ssr_page_1 = new URL('/ssr-page-1', Astro.url);
+const ssr_page_2 = new URL('/ssr-page-2', Astro.url);
+const ssg_page_a = new URL('/ssg-page-a', Astro.url);
+const ssg_page_b = new URL('/ssg-page-b', Astro.url);
+---
+
+<div>
+    <a href="/ssr-page-1">SSR Page 1</a><br />
+    <a href={ssr_page_1.href}>SSR Page 1 using href from 'new URL/Astro.url'</a><br />
+    <a href="/ssr-page-2">SSR Page 2</a><br />
+    <a href={ssr_page_2.href}>SSR Page 2 using href from 'new URL/Astro.url'</a><br />
+    <hr />
+    <a href="/ssg-page-a">SSG Page A</a><br />
+    <a href={ssg_page_a.href}>SSG Page A using href from 'new URL/Astro.url'</a><br />
+    <a href="/ssg-page-b">SSG Page B</a><br />
+    <a href={ssg_page_b.href}>SSG Page B using href from 'new URL/Astro.url'</a><br />
+    <hr />
+    <a href="/netlify-rewrite-to-ssr-page">Test Netlify Rewrite (Redirect) to SSR page (SSR Page 1)</a><br />
+    <a href="/netlify-rewrite-to-ssg-page">Test Netlify Rewrite (Redirect) to SSG page (SSG Page A)</a><br />
+    <a href="/astro-rewrite-to-ssr-page">Test Astro Rewrite to SSR page (SSR Page 1)</a><br />
+    <a href="/astro-rewrite-to-ssg-page">Test Astro Rewrite to SSG page (SSG Page A)</a><br />
+</div>
